@@ -11,14 +11,15 @@ import java.util.ArrayList;
 public class ClientList {
     private ArrayList<Client> clients = new ArrayList<>();
 
-    public void addClient(String ip_address, int port) {
-        this.clients.add(new Client(ip_address, port));
+    public void addClient(String name, String ip_address, int port) {
+        this.clients.add(new Client(name, ip_address, port));
     }
 }
 
 @Data
 @AllArgsConstructor
 class Client {
+    private String name;
     private String ip_address;
     private int port;
 }

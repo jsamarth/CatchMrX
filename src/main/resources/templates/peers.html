@@ -7,6 +7,7 @@
     <h1>All Peers</h1>
     <tbody>
     <tr th:each="client: ${clients}">
+        <td th:text="${client.name}" />
         <td th:text="${client.ip_address}" />
         <td th:text="${client.port}" /> <br>
     </tr>
