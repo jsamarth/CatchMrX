@@ -1,5 +1,6 @@
 package com.example.catchmrx;
 
+import com.example.catchmrx.models.Client;
 import com.example.catchmrx.models.ClientList;
 import com.example.catchmrx.models.PlayerForm;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -25,22 +26,7 @@ public class MainController {
 
     @GetMapping("/get_peers")
     public String get_peers(Model model) {
-        model.addAttribute("clients", clientlist.getClients());
-        return "peers";
+        model.addAttribute("clients", clientlist.getClients().values());
+        return "get_peers";
     }
-
-    @PostMapping("/find_game_room")
-    public String find_game_room(@ModelAttribute PlayerForm player, Model model, HttpServletRequest request) {
-        model.addAttribute("name", player.getName());
-
-        // Add information about peer to the list of clients
-        String ip_address = request.getRemoteAddr();
-        int port = request.getRemotePort();
-        System.out.println(ip_address);
-        System.out.println(port);
-        clientlist.addClient(player.getName(), ip_address, port);
-
-        return "game_room";
-    }
-
 }
