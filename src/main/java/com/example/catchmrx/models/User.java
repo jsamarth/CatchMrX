@@ -2,8 +2,11 @@ package com.example.catchmrx.models;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 @Data
-public class PlayerForm {
+@AllArgsConstructor
+@NoArgsConstructor
+public class User {
     private String name;
 }
