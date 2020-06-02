@@ -7,11 +7,10 @@ import lombok.Data;
 @AllArgsConstructor
 public class Client {
     private String name;
-    private String ip_address;
-    private int port;
+    private String sessionId;
     private Status status;
     private GameRole gameRole;
 
-    public enum Status {NOT_READY, IN_LOBBY, IN_GAME, END_OF_GAME};
-    public enum GameRole {NA, DETECTIVE, MR_X};
+    public enum Status {NOT_READY, IN_LOBBY, IN_GAME, END_OF_GAME}
+    public enum GameRole {DETECTIVE, MR_X}
 }
